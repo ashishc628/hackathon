@@ -1,20 +1,28 @@
 # app/main.py
+# from fastapi import FastAPI
+# from app.models.api import QueryRequest, QueryResponse
+# from app.llm.router import route_question
+# from app.llm.verification_intent import extract_verification_intent
+# from app.llm.verification_answer import build_verification_answer
+# from app.services.verification_analytics import get_provider_campaign_stats
+
+
+
+# from fastapi import FastAPI
+# from app.models.api import QueryRequest, QueryResponse
+# from app.llm.router import route_question
+# from app.llm.verification_intent import extract_verification_intent
+# from app.llm.verification_answer import build_verification_answer
+# from app.services.verification_analytics import get_provider_campaign_stats
+
 from fastapi import FastAPI
-from app.models.api import QueryRequest, QueryResponse
-from app.llm.router import route_question
-from app.llm.verification_intent import extract_verification_intent
-from app.llm.verification_answer import build_verification_answer
-from app.services.verification_analytics import get_provider_campaign_stats
+from fastapi.middleware.cors import CORSMiddleware
 
-
-
-from fastapi import FastAPI
-from app.models.api import QueryRequest, QueryResponse
-from app.llm.router import route_question
-from app.llm.verification_intent import extract_verification_intent
-from app.llm.verification_answer import build_verification_answer
-from app.services.verification_analytics import get_provider_campaign_stats
-
+from models.api import QueryRequest, QueryResponse
+from llm.router import route_question
+from llm.verification_intent import extract_verification_intent
+from llm.verification_answer import build_verification_answer
+from services.verification_analytics import get_provider_campaign_stats
 
 
 app = FastAPI(title="zk-loci Analytics API")
