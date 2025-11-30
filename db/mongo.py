@@ -3,15 +3,9 @@
 from pymongo import MongoClient
 from config import settings
 
-# Use the Atlas SRV URI directly from env
-# Example MONGO_URI:
-# mongodb+srv://user:pass@ac-vpafuag.e07sxvu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-
 client = MongoClient(
     settings.MONGO_URI,
-    serverSelectionTimeoutMS=30000,
-    tls=True,                      # ensure TLS
-    tlsAllowInvalidCertificates=True,  # <-- OK for hackathon/demo, not for production
+    serverSelectionTimeoutMS=30000  # 30s
 )
 
 db = client[settings.MONGO_DB_NAME]
