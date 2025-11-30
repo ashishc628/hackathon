@@ -4,7 +4,8 @@
 from datetime import datetime, timedelta
 from typing import Dict, Any
 
-from app.db.mongo import requests_coll, proofs_coll
+# from app.db.mongo import requests_coll, proofs_coll
+from db.mongo import requests_coll, proofs_coll  # NOT from app.db.mongo
 
 
 def get_provider_campaign_stats(intent: Dict[str, Any]) -> Dict[str, Any]:
